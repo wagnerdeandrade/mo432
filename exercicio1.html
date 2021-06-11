@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jacques Wainer" />
+  <title>Exercício 1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"><p>Exercício 1</p></h1>
+<p class="author">Jacques Wainer</p>
+</header>
+<h1 id="exercício-1">Exercício 1</h1>
+<p>Data de entrega: 30/5 a meia noite, via moodle</p>
+<p>Objetivos: leitura, preprocessamento, validação cruzada e regressão linear</p>
+<h1 id="leia">1) Leia</h1>
+<p>Leia o arquivo <a href="./solar-flare.csv">solar-flare.csv</a>. O arquivo é tipo csv mas usa um branco como separador. Ainda a primeira linha nao é para ser lida, e não há uma linha com o nome dos atributos/colunas.</p>
+<p>Voce provavelmente precisa usar algo como o pandas para ler o arquivo como um todo.</p>
+<p>As tres primeiras colunas são categóricas. As ultimas 3 colunas são os atributos de saída - vc quer prever cada um dos 3 valores finais.</p>
+<p>Uma explicação para esses dados esta em <a href="https://archive.ics.uci.edu/ml/datasets/Solar+Flare" class="uri">https://archive.ics.uci.edu/ml/datasets/Solar+Flare</a></p>
+<p>Imprima usando o pandas.head() o inicio e o fim desse conjunto de dados.</p>
+<h1 id="converta-os-atributos-categóricos-para-numéricos">2) Converta os atributos categóricos para numéricos</h1>
+<p>Usando o one-hot-enconder, converta todos os atributos categóricos para numéricos.</p>
+<p>Imprima usando o pandas.head() o inicio e o fim desse conjunto de dados transformados.</p>
+<h1 id="centering-and-scaling">3) Centering and scaling</h1>
+<p>Faca o centering and standard scaling para todos os atributos de entrada (convertidos para numéricos)</p>
+<h1 id="pca">4) PCA</h1>
+<p>reduza a dimensionalidade dos atributos de entrada usando PCA.</p>
+<ol type="1">
+<li><p>quantas dimensões restarão se mantivermos 90% da variância dos dados?</p></li>
+<li><p>Use o scree plot para determinar quantas dimensões devem ser mantidas</p></li>
+<li><p>converta os dados usando o PCA com 90% das variância.</p></li>
+</ol>
+<h1 id="validação-cruzada-e-regressão-linear">5) Validação cruzada e regressão linear</h1>
+<p>Fazendo 5 repetições de uma validação cruzada aleatória com split de 70/30 (70% treino 30% teste).</p>
+<p>Treine 3 regressões lineares, uma para cada um dos 3 atributos de saída.</p>
+<p>regressão linear do Sklearn <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" class="uri">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html</a></p>
+<p>Treine no conjunto de treino e meça o RMSE e o MAE deste modelo treinado no conjunto de teste correspondente.</p>
+<p>Imprima o RMSE e o MAE no conjunto de testes de cada uma das 5 repetições. Imprima também a média do RMSE e do MAE.</p>
+</body>
+</html>
